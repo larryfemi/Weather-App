@@ -12,4 +12,6 @@ const appData = {
 	appkey: AppKey,
 };
 
-app.listen(port, () => console.log(`Server started at port ${port}`));
+const listening = () => console.log(`Server started at port ${port}`);
+
+app.listen(port, listening());
