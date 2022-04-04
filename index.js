@@ -12,6 +12,10 @@ const appData = {
 	appkey: AppKey,
 };
 
+app.post("/weather", (req, res) => {
+	console.log(req.body);
+});
+
 const listening = () => console.log(`Server started at port ${port}`);
 
 app.listen(port, listening());
