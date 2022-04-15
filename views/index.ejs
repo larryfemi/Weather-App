@@ -7,34 +7,39 @@
 		<div class="wrapper">
 			<header><i class="bx bx-left-arrow-alt"></i>Weather App</header>
 			<section class="input-part">
-				<p class="info-txt pending">Please enter a Valid city name</p>
-				<input
+				<% if (weather == null) { %>
+					<p class="info-txt pending">Please enter a Valid city name</p>
+				<% } %>
+				<form action="/" method="POST">
+					<input
 					type="text"
 					placeholder="Enter a City Name"
 					name = "city"
 					spellcheck="false"
 					required
 				/>
+				</form>
+				
 				<div class="seperator"></div>
 				<button>Get Device Location</button>
 			</section>
 			<section class="weather-part">
-				<img src="https://openweathermap.org/img/w/<%= weather.icon %>.png" alt="Weather Icon" />
+				<img src="https://openweathermap.org/img/w/<%= weather?.icon %>.png" alt="Weather Icon" />
 				<div class="temp">
-					<span class="numb"><%= weather.temperature %></span>
+					<span class="numb"><%= weather?.temperature %></span>
 					<span class="deg">°</span>C
 				</div>
-				<div class="weather"><%= weather.description %></div>
+				<div class="weather"><%= weather?.description %></div>
 				<div class="location">
 					<i class="bx bx-map"></i>
-					<span><%= weather.cityName %></span>
+					<span><%= weather?.cityName %></span>
 				</div>
 				<div class="bottom-details">
 					<div class="column feels">
 						<i class="bx bxs-thermometer"></i>
 						<div class="details">
 							<div class="temp">
-								<span class="numb-2"><%= weather.feelsLike %></span>
+								<span class="numb-2"><%= weather?.feelsLike %></span>
 								<span class="deg">°</span>C
 							</div>
 							<p>Feels like</p>
@@ -43,7 +48,7 @@
 					<div class="column humidity">
 						<i class="bx bxs-droplet-half"></i>
 						<div class="details">
-							<span><%= weather.humidity %>%</span>
+							<span><%= weather?.humidity %>%</span>
 							<p>Humidity</p>
 				</div>
 			</section>

@@ -200,3 +200,7 @@ header i {
 	font-size: 14px;
 	margin-top: -6px;
 }
+
+.hide {
+	display: none !important;
+}
